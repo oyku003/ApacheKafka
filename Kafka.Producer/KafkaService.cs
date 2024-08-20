@@ -51,7 +51,7 @@ namespace Kafka.Producer
             {
                 await adminClient.CreateTopicsAsync(new[]
                 {
-            new TopicSpecification(){Name=topicName, NumPartitions=6, ReplicationFactor=1}
+            new TopicSpecification(){Name=topicName, NumPartitions=3, ReplicationFactor=1}
         });//tek broker old için replikaları olamaz.
 
                 Console.WriteLine($"Topic {topicName} oluştu");
@@ -373,7 +373,7 @@ namespace Kafka.Producer
 
         internal async Task SendMessageWithAck(string topicName)
         {
-            var config = new ProducerConfig() { BootstrapServers = "localhost:9094", Acks= Acks.All };//none//lead
+            var config = new ProducerConfig() { BootstrapServers = "localhost:9094", Acks= Acks.None };//none//lead
 
             using var producer = new ProducerBuilder<Null, string>(config)
                 .Build();
@@ -454,7 +454,7 @@ namespace Kafka.Producer
 
             var config = new ProducerConfig()
             {
-                BootstrapServers = "localhost:7000",
+                BootstrapServers = "localhost:7000,localhost:7001,localhost:7002",
                 Acks = Acks.All,
                 MessageTimeoutMs = 6000,
                 MessageSendMaxRetries = 2,

@@ -3,19 +3,19 @@ using Kafka.Consumer;
 
 Console.WriteLine("Kafka Consumer 1");
 
-var topicName = "mycluster2-topic";
+//var topicName = "case-6-topic";
 var kafkaService = new KafkaService();
 
-//await kafkaService.ConsumeSimpleMessageWithNullKey(topicName);
-//await kafkaService.ConsumeSimpleMessageWithIntKey(topicName);
-//await kafkaService.ConsumeComplexMessageWithIntKey(topicName);
-//await kafkaService.ConsumeComplexMessageWithIntKeyAndHeader(topicName);
-//await kafkaService.ConsumeComplexMessageWithComplexKey(topicName);
-//await kafkaService.ConsumeMessageWithTimeStamp(topicName);
-//await kafkaService.ConsumeMessageFromSpecificPartition(topicName);
-//await kafkaService.ConsumeMessageFromSpecificPartitionOffset(topicName);
-//await kafkaService.ConsumeMessageFromSpecificPartitionOffsetForAck(topicName);
-await kafkaService.ConsumeMessageFromCluster(topicName);
+//await kafkaService.ConsumeSimpleMessageWithNullKey("topic3");
+//await kafkaService.ConsumeSimpleMessageWithIntKey("topic4");
+//await kafkaService.ConsumeComplexMessageWithIntKey("topic4.1");
+//await kafkaService.ConsumeComplexMessageWithIntKeyAndHeader("topic5");
+//await kafkaService.ConsumeComplexMessageWithComplexKey("topic6");
+//await kafkaService.ConsumeMessageWithTimeStamp("topic7");
+//await kafkaService.ConsumeMessageFromSpecificPartition("topic8");
+//await kafkaService.ConsumeMessageFromSpecificPartitionOffset("topic8");
+//await kafkaService.ConsumeMessageFromSpecificPartitionOffsetForAck("ack-topic");
+//await kafkaService.ConsumeMessageFromCluster("cluster-topic");
 
 Console.ReadLine();
 
